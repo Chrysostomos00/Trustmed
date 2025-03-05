@@ -79,8 +79,10 @@
       background-color: #fff;
       backdrop-filter: blur(10px);
       transition: all var(--transition-speed) ease;
-      height: 300%;
+      /* Removed height: 300%; and replaced with a more appropriate value */
+      height: var(--nav-height); 
     }
+
     .nav-container {
       display: flex;
       align-items: center;
@@ -96,7 +98,7 @@
     .nav-menu {
       display: flex;
       gap: 0.5rem;
-      margin-left: auto; /* Align links to the right */
+      margin-left: auto; /* Align links to the right on larger screens */
       align-items: center;
     }
     .nav-menu a {
@@ -579,8 +581,21 @@
       RESPONSIVE ADJUSTMENTS
     ------------------------------*/
     @media (max-width: 768px) {
+      /* Remove the original "display: none;" for .nav-menu */
+      /* .nav-menu { display: none; } */
+
+      /* Allow the nav to wrap and stack on mobile */
+      .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
       .nav-menu {
-        display: none; /* For demonstration, you can replace this with a hamburger menu */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 0; /* override margin-left: auto on mobile */
       }
 
       .hero-content {
@@ -628,7 +643,7 @@
       <a href="#home" class="brand-logo">
         <img src="assets/img/logo1.png" alt="TrustMed Services" width="220" height="60">
       </a>
-  	<a href="#home" class="brand-logo">
+      <a href="#home" class="brand-logo">
         <img src="assets/img/logo2.png" alt="TrustMed Services" width="220" height="60">
       </a>
 
@@ -847,7 +862,7 @@
           <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-      <!-- Add additional footer columns/sections here -->
+      <!-- Add additional footer columns/sections here if needed -->
     </div>
 
     <div class="copyright-bar container">
