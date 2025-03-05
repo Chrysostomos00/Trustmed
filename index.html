@@ -79,28 +79,32 @@
       background-color: #fff;
       backdrop-filter: blur(10px);
       transition: all var(--transition-speed) ease;
-      /* Removed height: 300%; and replaced with a more appropriate value */
-      height: var(--nav-height); 
+      /* Let the header auto-size instead of forcing a fixed height */
+      height: auto;
+      padding: 0.5rem 0;
     }
 
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 1rem; /* Slimmer nav */
-      height: 100%;
+      /* Remove height: 100% so it can expand when items wrap */
+      padding: 0 1rem;
     }
+
     .brand-logo img {
       width: 100px;
       height: auto;
       display: block;
     }
+
     .nav-menu {
       display: flex;
       gap: 0.5rem;
       margin-left: auto; /* Align links to the right on larger screens */
       align-items: center;
     }
+
     .nav-menu a {
       color: var(--light-text);
       padding: 0.5rem 0.75rem;
@@ -108,13 +112,16 @@
       border-radius: 6px;
       transition: background-color var(--transition-speed) ease;
     }
+
     .nav-menu a:hover {
       background-color: rgba(0, 0, 0, 0.05);
     }
+
     .nav-cta {
       background-color: var(--accent);
       color: #fff;
     }
+
     .nav-cta:hover {
       background-color: #3ea66a;
     }
@@ -136,6 +143,9 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
+      /* Add top padding so hero text isn't hidden behind the sticky header */
+      padding-top: 4rem;
     }
 
     .hero-content {
@@ -257,6 +267,7 @@
       -webkit-overflow-scrolling: touch;
       overflow-x: auto;
     }
+
     .service-slider::-webkit-scrollbar {
       display: none;
     }
@@ -581,13 +592,15 @@
       RESPONSIVE ADJUSTMENTS
     ------------------------------*/
     @media (max-width: 768px) {
-      /* Remove the original "display: none;" for .nav-menu */
-      /* .nav-menu { display: none; } */
-
-      /* Allow the nav to wrap and stack on mobile */
+      /* Let the header/nav stack instead of float. */
       .nav-container {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .brand-logo img {
+        /* Slightly smaller logo on mobile */
+        width: 150px;
       }
 
       .nav-menu {
@@ -595,7 +608,8 @@
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        margin-left: 0; /* override margin-left: auto on mobile */
+        margin-left: 0; 
+        margin-top: 1rem; /* space between logos and nav links */
       }
 
       .hero-content {
@@ -862,7 +876,7 @@
           <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-      <!-- Add additional footer columns/sections here if needed -->
+      <!-- Add additional footer columns/sections here -->
     </div>
 
     <div class="copyright-bar container">
