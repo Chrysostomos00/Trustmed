@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TrustMed Services Ltd | Premium Marine Solutions</title>
-  <meta name="description" content="Global leader in marine consultancy, ship management, and technical services ensuring operational excellence and regulatory compliance">
+  <meta
+    name="description"
+    content="Global leader in marine consultancy, ship management, and technical services ensuring operational excellence and regulatory compliance"
+  />
 
   <!-- Google Font (Inter) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
   <!-- Schema Markup -->
   <script type="application/ld+json">
   {
@@ -27,7 +36,7 @@
   }
   </script>
 
-  <!-- Inline Styles for demonstration -->
+  <!-- Inline Styles -->
   <style>
     /*------------------------------ 
       VARIABLES & RESET
@@ -39,8 +48,6 @@
       --light-bg: #FFFFFF;
       --light-text: #333333;
       --transition-speed: 0.3s;
-
-      /* Optional nav height variable */
       --nav-height: 60px;
     }
 
@@ -51,7 +58,7 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       background-color: var(--light-bg);
       color: var(--light-text);
       line-height: 1.6;
@@ -79,7 +86,6 @@
       background-color: #fff;
       backdrop-filter: blur(10px);
       transition: all var(--transition-speed) ease;
-      /* Let the header auto-size instead of forcing a fixed height */
       height: auto;
       padding: 0.5rem 0;
     }
@@ -88,7 +94,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* Remove height: 100% so it can expand when items wrap */
       padding: 0 1rem;
     }
 
@@ -98,11 +103,19 @@
       display: block;
     }
 
+    /* Hamburger icon (hidden by default, only visible on mobile) */
+    .hamburger-menu {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
     .nav-menu {
       display: flex;
       gap: 0.5rem;
-      margin-left: auto; /* Align links to the right on larger screens */
+      margin-left: auto;
       align-items: center;
+      transition: max-height var(--transition-speed) ease;
     }
 
     .nav-menu a {
@@ -126,6 +139,11 @@
       background-color: #3ea66a;
     }
 
+    /* When nav-menu has "active" class, show it on mobile */
+    .nav-menu.active {
+      display: flex;
+    }
+
     /*------------------------------
       HERO SECTION
     ------------------------------*/
@@ -139,13 +157,11 @@
           rgba(26, 54, 93, 0.8),
           rgba(43, 108, 176, 0.8)
         ),
-        url('assets/img/hero-bg.jpg'); /* Replace with your own hero image */
+        url("assets/img/hero-bg.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
-      /* Add top padding so hero text isn't hidden behind the sticky header */
-      padding-top: 4rem;
+      padding-top: 4rem; /* So hero text isn't hidden by the header */
     }
 
     .hero-content {
@@ -243,7 +259,6 @@
       font-weight: 700;
     }
 
-    /* Container for the slider + arrows */
     .slider-controls {
       display: flex;
       align-items: center;
@@ -251,14 +266,12 @@
       justify-content: center;
     }
 
-    /* Outer container to hide overflow */
     .service-slider-container {
       position: relative;
       overflow: hidden;
-      flex: 1; /* so it stretches between arrows */
+      flex: 1;
     }
 
-    /* Flex container for the cards */
     .service-slider {
       display: flex;
       gap: 2rem;
@@ -272,13 +285,12 @@
       display: none;
     }
 
-    /* Each card: same content, new layout to wrap text properly */
     .service-card {
       width: 300px;
       display: inline-flex;
       flex-direction: column;
       flex-shrink: 0;
-      white-space: normal; /* allow text wrapping inside the card */
+      white-space: normal;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
       backdrop-filter: blur(5px);
@@ -320,7 +332,6 @@
       text-decoration: underline;
     }
 
-    /* Slider Navigation Buttons */
     .slider-btn {
       background: var(--accent);
       color: #fff;
@@ -337,7 +348,6 @@
       opacity: 1;
     }
 
-    /* Disabled button style */
     .slider-btn:disabled {
       opacity: 0.4;
       cursor: not-allowed;
@@ -417,7 +427,7 @@
       max-width: 800px;
       margin: 2rem auto;
       height: 400px;
-      background: url('assets/img/world-map.jpg') no-repeat center/cover;
+      background: url("assets/img/world-map.jpg") no-repeat center/cover;
       border-radius: 8px;
     }
 
@@ -592,24 +602,30 @@
       RESPONSIVE ADJUSTMENTS
     ------------------------------*/
     @media (max-width: 768px) {
-      /* Let the header/nav stack instead of float. */
+      /* Stack the logo + hamburger + nav */
       .nav-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
       }
 
       .brand-logo img {
-        /* Slightly smaller logo on mobile */
         width: 150px;
       }
 
+      .hamburger-menu {
+        display: block; /* show the hamburger on mobile */
+        margin-left: auto;
+        margin-top: 0.5rem;
+      }
+
+      /* Hide nav-menu by default on mobile, show only when .active is toggled */
       .nav-menu {
-        display: flex;
+        display: none;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 1rem;
-        margin-left: 0; 
-        margin-top: 1rem; /* space between logos and nav links */
+        margin-left: 0;
+        margin-top: 1rem;
       }
 
       .hero-content {
@@ -646,6 +662,16 @@
         width: 250px;
       }
     }
+
+    @media (min-width: 769px) {
+      /* On desktop, hide the hamburger and show nav-menu by default */
+      .hamburger-menu {
+        display: none;
+      }
+      .nav-menu {
+        display: flex !important;
+      }
+    }
   </style>
 </head>
 
@@ -655,13 +681,18 @@
     <nav class="nav-container container">
       <!-- Logo links to homepage -->
       <a href="#home" class="brand-logo">
-        <img src="assets/img/logo1.png" alt="TrustMed Services" width="220" height="60">
+        <img src="assets/img/logo1.png" alt="TrustMed Services" width="220" height="60" />
       </a>
       <a href="#home" class="brand-logo">
-        <img src="assets/img/logo2.png" alt="TrustMed Services" width="220" height="60">
+        <img src="assets/img/logo2.png" alt="TrustMed Services" width="220" height="60" />
       </a>
 
-      <!-- Navigation Links aligned right -->
+      <!-- Hamburger Menu (mobile only) -->
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <!-- Navigation Links -->
       <div class="nav-menu">
         <a href="#home" class="nav-link home-link">Home</a>
         <a href="#services" class="nav-link">Services</a>
@@ -676,7 +707,7 @@
   <section id="home" class="immersive-hero">
     <div class="hero-content">
       <h1 class="hero-title">
-        <span class="highlight">Navigating Excellence</span> in<br>
+        <span class="highlight">Navigating Excellence</span> in<br />
         Modern Marine Solutions
       </h1>
 
@@ -704,11 +735,11 @@
   <!-- Services Slider -->
   <section id="services" class="services-section">
     <h2 class="section-title">Core Services</h2>
-    
+
     <!-- Slider Controls + Container -->
     <div class="container">
       <div class="slider-controls">
-        <!-- Left Arrow (outside the card container) -->
+        <!-- Left Arrow -->
         <button class="slider-btn prev-btn" aria-label="Previous">
           <i class="fas fa-chevron-left"></i>
         </button>
@@ -722,7 +753,10 @@
                 <i class="fas fa-ship"></i>
               </div>
               <h3>Technical Shipmanagement</h3>
-              <p>Full operational control with real-time monitoring systems and predictive maintenance solutions.</p>
+              <p>
+                Full operational control with real-time monitoring systems and
+                predictive maintenance solutions.
+              </p>
               <a href="#" class="card-cta">Explore Solutions →</a>
             </article>
 
@@ -732,7 +766,10 @@
                 <i class="fas fa-hard-hat"></i>
               </div>
               <h3>Drydock Management</h3>
-              <p>End-to-end drydock supervision with cost optimization and timeline guarantees.</p>
+              <p>
+                End-to-end drydock supervision with cost optimization and
+                timeline guarantees.
+              </p>
               <a href="#" class="card-cta">View Case Studies →</a>
             </article>
 
@@ -742,7 +779,10 @@
                 <i class="fas fa-anchor"></i>
               </div>
               <h3>Crew Management</h3>
-              <p>Providing skilled personnel with thorough training and safety compliance.</p>
+              <p>
+                Providing skilled personnel with thorough training and safety
+                compliance.
+              </p>
               <a href="#" class="card-cta">Learn More →</a>
             </article>
 
@@ -752,7 +792,10 @@
                 <i class="fas fa-shield-alt"></i>
               </div>
               <h3>Regulatory Compliance</h3>
-              <p>Comprehensive audits and documentation to meet global maritime standards.</p>
+              <p>
+                Comprehensive audits and documentation to meet global maritime
+                standards.
+              </p>
               <a href="#" class="card-cta">View Details →</a>
             </article>
 
@@ -762,7 +805,10 @@
                 <i class="fas fa-route"></i>
               </div>
               <h3>Navigation & Route Planning</h3>
-              <p>State-of-the-art navigation systems for optimal route efficiency and fuel savings.</p>
+              <p>
+                State-of-the-art navigation systems for optimal route efficiency
+                and fuel savings.
+              </p>
               <a href="#" class="card-cta">Explore Services →</a>
             </article>
 
@@ -772,13 +818,16 @@
                 <i class="fas fa-user-check"></i>
               </div>
               <h3>Safety & Training</h3>
-              <p>Customized programs to enhance onboard safety culture and operational readiness.</p>
+              <p>
+                Customized programs to enhance onboard safety culture and
+                operational readiness.
+              </p>
               <a href="#" class="card-cta">Get Started →</a>
             </article>
           </div>
         </div>
 
-        <!-- Right Arrow (outside the card container) -->
+        <!-- Right Arrow -->
         <button class="slider-btn next-btn" aria-label="Next">
           <i class="fas fa-chevron-right"></i>
         </button>
@@ -791,17 +840,26 @@
     <div class="about-container container">
       <div class="about-media">
         <div class="media-card">
-          <img src="assets/img/operations.jpg" alt="Global Operations" class="parallax-image">
+          <img
+            src="assets/img/operations.jpg"
+            alt="Global Operations"
+            class="parallax-image"
+          />
         </div>
       </div>
 
       <div class="about-content">
-        <h2 class="section-title">Marine Expertise<br><span class="highlight">Since 2008</span></h2>
-        <p class="lead-text">Pioneering smart marine solutions through technological innovation and operational excellence.</p>
+        <h2 class="section-title">
+          Marine Expertise<br /><span class="highlight">Since 2008</span>
+        </h2>
+        <p class="lead-text">
+          Pioneering smart marine solutions through technological innovation and
+          operational excellence.
+        </p>
 
         <div class="certification-badges">
-          <img src="assets/img/iso-cert.png" alt="ISO 9001 Certified">
-          <img src="assets/img/maritime-cert.png" alt="IMCA Certified">
+          <img src="assets/img/iso-cert.png" alt="ISO 9001 Certified" />
+          <img src="assets/img/maritime-cert.png" alt="IMCA Certified" />
         </div>
       </div>
     </div>
@@ -835,7 +893,7 @@
   <section id="contact" class="contact-section">
     <div class="contact-container container">
       <div class="contact-info">
-        <h2>Ready to Modernize<br>Your Fleet?</h2>
+        <h2>Ready to Modernize<br />Your Fleet?</h2>
         <div class="info-card">
           <i class="fas fa-phone"></i>
           <div>
@@ -848,10 +906,10 @@
 
       <form class="contact-form">
         <div class="form-group">
-          <input type="text" placeholder="Full Name" required>
+          <input type="text" placeholder="Full Name" required />
         </div>
         <div class="form-group">
-          <input type="email" placeholder="Email Address" required>
+          <input type="email" placeholder="Email Address" required />
         </div>
         <div class="form-group">
           <textarea placeholder="Project Requirements" rows="5"></textarea>
@@ -876,7 +934,7 @@
           <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-      <!-- Add additional footer columns/sections here -->
+      <!-- Add additional footer columns/sections here if needed -->
     </div>
 
     <div class="copyright-bar container">
@@ -890,10 +948,16 @@
 
   <!-- Scripts -->
   <script>
+    // Toggle nav-menu on mobile
+    function toggleMenu() {
+      const navMenu = document.querySelector(".nav-menu");
+      navMenu.classList.toggle("active");
+    }
+
     // Service Slider Navigation
-    const serviceSlider = document.querySelector('.service-slider');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    const serviceSlider = document.querySelector(".service-slider");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
 
     // Scroll distance (in px) per click
     const scrollAmount = 300;
@@ -902,15 +966,13 @@
     function updateArrowState() {
       const scrollLeft = serviceSlider.scrollLeft;
       const maxScrollLeft = serviceSlider.scrollWidth - serviceSlider.clientWidth;
-      
-      // If we're at the leftmost position
+
       if (scrollLeft <= 0) {
         prevBtn.disabled = true;
       } else {
         prevBtn.disabled = false;
       }
-      
-      // If we're at or very close to the rightmost position
+
       if (scrollLeft >= maxScrollLeft - 1) {
         nextBtn.disabled = true;
       } else {
@@ -922,16 +984,16 @@
     updateArrowState();
 
     // Listen for scroll & window resize
-    serviceSlider.addEventListener('scroll', updateArrowState);
-    window.addEventListener('resize', updateArrowState);
+    serviceSlider.addEventListener("scroll", updateArrowState);
+    window.addEventListener("resize", updateArrowState);
 
     // Button event handlers
-    prevBtn.addEventListener('click', () => {
-      serviceSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    prevBtn.addEventListener("click", () => {
+      serviceSlider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     });
 
-    nextBtn.addEventListener('click', () => {
-      serviceSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    nextBtn.addEventListener("click", () => {
+      serviceSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
     });
   </script>
 </body>
