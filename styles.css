@@ -1,0 +1,67 @@
+:root {
+    --primary: #1A365D;
+    --secondary: #2B6CB0;
+    --accent: #48BB78;
+    --text: #F7FAFC;
+    --background: #FFFFFF;
+    --dark-background: #121212;
+    --font-family: 'Inter', sans-serif;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background);
+    color: var(--primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Sticky Header */
+header.smart-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(26, 54, 93, 0.9);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Hero CTA Button */
+.hero-cta {
+    background-color: var(--accent);
+    color: var(--text);
+    padding: 0.75em 1.5em;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.hero-cta:hover {
+    background-color: #3ea66a; /* slightly darker variant */
+}
+
+/* Service Card Hover */
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Show a hamburger menu instead */
+    }
+}

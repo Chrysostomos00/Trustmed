@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrustMed Services Ltd | Premium Marine Solutions</title>
+  <meta name="description" content="Global leader in marine consultancy, ship management, and technical services ensuring operational excellence and regulatory compliance">
+
+  <!-- Google Font (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TrustMed Services Ltd",
+      "url": "https://trustmedservices.com",
+      "logo": "https://trustmedservices.com/assets/img/logo.png",
+      "sameAs": [
+          "https://linkedin.com/company/trustmed",
+          "https://twitter.com/trustmed_marine"
+      ]
+  }
+  </script>
+
+  <!-- Inline Styles for demonstration -->
+  <style>
+    /*------------------------------ 
+      VARIABLES & RESET
+    ------------------------------*/
+    :root {
+      --primary: #1A365D;
+      --secondary: #2B6CB0;
+      --accent: #48BB78;
+      --light-bg: #FFFFFF;
+      --light-text: #333333;
+      --transition-speed: 0.3s;
+
+      /* Optional nav height variable */
+      --nav-height: 60px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /*------------------------------
+      HEADER & NAVIGATION
+    ------------------------------*/
+    header.smart-header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: #fff;
+      backdrop-filter: blur(10px);
+      transition: all var(--transition-speed) ease;
+      height: 300%;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem; /* Slimmer nav */
+      height: 100%;
+    }
+    .brand-logo img {
+      width: 100px;
+      height: auto;
+      display: block;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: auto; /* Align links to the right */
+      align-items: center;
+    }
+    .nav-menu a {
+      color: var(--light-text);
+      padding: 0.5rem 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: background-color var(--transition-speed) ease;
+    }
+    .nav-menu a:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    .nav-cta {
+      background-color: var(--accent);
+      color: #fff;
+    }
+    .nav-cta:hover {
+      background-color: #3ea66a;
+    }
+
+    /*------------------------------
+      HERO SECTION
+    ------------------------------*/
+    .immersive-hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(
+          to bottom right,
+          rgba(26, 54, 93, 0.8),
+          rgba(43, 108, 176, 0.8)
+        ),
+        url('assets/img/hero-bg.jpg'); /* Replace with your own hero image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      color: #fff;
+      margin-left: 10%;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-title .highlight {
+      color: var(--accent);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.75rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scroll-indicator .mouse {
+      width: 24px;
+      height: 40px;
+      border: 2px solid #fff;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .scroll-indicator .mouse::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 8px;
+      background: #fff;
+      border-radius: 2px;
+      animation: scroll-wheel 1.2s infinite;
+    }
+
+    @keyframes scroll-wheel {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, 8px);
+      }
+    }
+
+    /*------------------------------
+      SERVICES SECTION
+    ------------------------------*/
+    .services-section {
+      padding: 4rem 1rem;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    /* Container for the slider + arrows */
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* Outer container to hide overflow */
+    .service-slider-container {
+      position: relative;
+      overflow: hidden;
+      flex: 1; /* so it stretches between arrows */
+    }
+
+    /* Flex container for the cards */
+    .service-slider {
+      display: flex;
+      gap: 2rem;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      overflow-x: auto;
+    }
+    .service-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Each card: same content, new layout to wrap text properly */
+    .service-card {
+      width: 300px;
+      display: inline-flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      white-space: normal; /* allow text wrapping inside the card */
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: var(--primary);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .service-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      color: #fff;
+    }
+
+    .service-card p {
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      color: #fff;
+    }
+
+    .card-cta {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .card-cta:hover {
+      text-decoration: underline;
+    }
+
+    /* Slider Navigation Buttons */
+    .slider-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .slider-btn:hover {
+      opacity: 1;
+    }
+
+    /* Disabled button style */
+    .slider-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /*------------------------------
+      ABOUT SECTION
+    ------------------------------*/
+    .about-section {
+      padding: 4rem 1rem;
+      background-color: var(--secondary);
+      color: #fff;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .about-media {
+      flex: 1 1 400px;
+    }
+
+    .about-content {
+      flex: 1 1 400px;
+    }
+
+    .media-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .parallax-image {
+      will-change: transform;
+      transition: transform 0.4s ease-out;
+    }
+
+    .parallax-image:hover {
+      transform: scale(1.02);
+    }
+
+    .about-content .section-title {
+      text-align: left;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .lead-text {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .certification-badges img {
+      width: 80px;
+      margin-right: 1rem;
+    }
+
+    /*------------------------------
+      GLOBAL NETWORK SECTION
+    ------------------------------*/
+    .network-section {
+      padding: 4rem 1rem;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      text-align: center;
+    }
+
+    .network-map {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      margin: 2rem auto;
+      height: 400px;
+      background: url('assets/img/world-map.jpg') no-repeat center/cover;
+      border-radius: 8px;
+    }
+
+    .map-point {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .pulse-effect {
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.8);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .location-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item span {
+      font-size: 2rem;
+      display: block;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /*------------------------------
+      CONTACT SECTION
+    ------------------------------*/
+    .contact-section {
+      padding: 4rem 1rem;
+      background-color: var(--secondary);
+      color: #fff;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      flex: 1 1 300px;
+    }
+
+    .contact-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .info-card i {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: var(--accent);
+    }
+
+    .contact-form {
+      flex: 1 1 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+    }
+
+    .form-cta {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color var(--transition-speed) ease;
+    }
+
+    .form-cta:hover {
+      background-color: #3ea66a;
+    }
+
+    /*------------------------------
+      FOOTER SECTION
+    ------------------------------*/
+    .main-footer {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links a {
+      margin-right: 0.5rem;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    .copyright-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 1rem;
+    }
+
+    .legal-links a {
+      margin-left: 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+
+    /*------------------------------
+      RESPONSIVE ADJUSTMENTS
+    ------------------------------*/
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none; /* For demonstration, you can replace this with a hamburger menu */
+      }
+
+      .hero-content {
+        margin-left: 5%;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .about-container,
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .network-map {
+        width: 90%;
+      }
+
+      .location-stats {
+        flex-direction: column;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+      }
+
+      .service-card {
+        width: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Dynamic Header -->
+  <header class="smart-header">
+    <nav class="nav-container container">
+      <!-- Logo links to homepage -->
+      <a href="#home" class="brand-logo">
+        <img src="assets/img/logo1.png" alt="TrustMed Services" width="220" height="60">
+      </a>
+  	<a href="#home" class="brand-logo">
+        <img src="assets/img/logo2.png" alt="TrustMed Services" width="220" height="60">
+      </a>
+
+      <!-- Navigation Links aligned right -->
+      <div class="nav-menu">
+        <a href="#home" class="nav-link home-link">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#operations" class="nav-link">Global Operations</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="immersive-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="highlight">Navigating Excellence</span> in<br>
+        Modern Marine Solutions
+      </h1>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number">850+</span>
+          <span class="stat-label">Vessels Managed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">98.7%</span>
+          <span class="stat-label">Compliance Rate</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Global Support</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+    </div>
+  </section>
+
+  <!-- Services Slider -->
+  <section id="services" class="services-section">
+    <h2 class="section-title">Core Services</h2>
+    
+    <!-- Slider Controls + Container -->
+    <div class="container">
+      <div class="slider-controls">
+        <!-- Left Arrow (outside the card container) -->
+        <button class="slider-btn prev-btn" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- Slider Container -->
+        <div class="service-slider-container">
+          <div class="service-slider">
+            <!-- Card 1 -->
+            <article class="service-card">
+              <div class="card-icon">
+                <i class="fas fa-ship"></i>
+              </div>
+              <h3>Technical Shipmanagement</h3>
+              <p>Full operational control with real-time monitoring systems and predictive maintenance solutions.</p>
+              <a href="#" class="card-cta">Explore Solutions →</a>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="service-card">
+              <div class="card-icon">
+                <i class="fas fa-hard-hat"></i>
+              </div>
+              <h3>Drydock Management</h3>
+              <p>End-to-end drydock supervision with cost optimization and timeline guarantees.</p>
+              <a href="#" class="card-cta">View Case Studies →</a>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="service-card">
+              <div class="card-icon">
+                <i class="fas fa-anchor"></i>
+              </div>
+              <h3>Crew Management</h3>
+              <p>Providing skilled personnel with thorough training and safety compliance.</p>
+              <a href="#" class="card-cta">Learn More →</a>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="service-card">
+              <div class="card-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>Regulatory Compliance</h3>
+              <p>Comprehensive audits and documentation to meet global maritime standards.</p>
+              <a href="#" class="card-cta">View Details →</a>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="service-card">
+              <div class="card-icon">
+                <i class="fas fa-route"></i>
+              </div>
+              <h3>Navigation & Route Planning</h3>
+              <p>State-of-the-art navigation systems for optimal route efficiency and fuel savings.</p>
+              <a href="#" class="card-cta">Explore Services →</a>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="service-card">
+              <div class="card-icon">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <h3>Safety & Training</h3>
+              <p>Customized programs to enhance onboard safety culture and operational readiness.</p>
+              <a href="#" class="card-cta">Get Started →</a>
+            </article>
+          </div>
+        </div>
+
+        <!-- Right Arrow (outside the card container) -->
+        <button class="slider-btn next-btn" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-container container">
+      <div class="about-media">
+        <div class="media-card">
+          <img src="assets/img/operations.jpg" alt="Global Operations" class="parallax-image">
+        </div>
+      </div>
+
+      <div class="about-content">
+        <h2 class="section-title">Marine Expertise<br><span class="highlight">Since 2008</span></h2>
+        <p class="lead-text">Pioneering smart marine solutions through technological innovation and operational excellence.</p>
+
+        <div class="certification-badges">
+          <img src="assets/img/iso-cert.png" alt="ISO 9001 Certified">
+          <img src="assets/img/maritime-cert.png" alt="IMCA Certified">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Network Section -->
+  <section id="operations" class="network-section">
+    <h2 class="section-title">Worldwide Presence</h2>
+
+    <div class="network-map">
+      <div class="map-point" style="top: 35%; left: 48%">
+        <div class="pulse-effect"></div>
+        <span>Rotterdam HQ</span>
+      </div>
+      <!-- Add more map points as needed -->
+    </div>
+
+    <div class="location-stats">
+      <div class="stat-item">
+        <span>15</span>
+        <p>Global Offices</p>
+      </div>
+      <div class="stat-item">
+        <span>200+</span>
+        <p>Technical Experts</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container container">
+      <div class="contact-info">
+        <h2>Ready to Modernize<br>Your Fleet?</h2>
+        <div class="info-card">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h4>Emergency Support</h4>
+            <p>+31 123 456 789</p>
+          </div>
+        </div>
+        <!-- Add more info cards if needed -->
+      </div>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Project Requirements" rows="5"></textarea>
+        </div>
+        <button type="submit" class="form-cta">
+          Request Consultation
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-grid container">
+      <div class="footer-section">
+        <h4>TrustMed Services</h4>
+        <p>Marine Excellence Through Innovation</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <!-- Add additional footer columns/sections here -->
+    </div>
+
+    <div class="copyright-bar container">
+      <p>© 2025 TrustMed Services Ltd. All rights reserved</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Service Slider Navigation
+    const serviceSlider = document.querySelector('.service-slider');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    // Scroll distance (in px) per click
+    const scrollAmount = 300;
+
+    // Disable/enable arrows based on scroll position
+    function updateArrowState() {
+      const scrollLeft = serviceSlider.scrollLeft;
+      const maxScrollLeft = serviceSlider.scrollWidth - serviceSlider.clientWidth;
+      
+      // If we're at the leftmost position
+      if (scrollLeft <= 0) {
+        prevBtn.disabled = true;
+      } else {
+        prevBtn.disabled = false;
+      }
+      
+      // If we're at or very close to the rightmost position
+      if (scrollLeft >= maxScrollLeft - 1) {
+        nextBtn.disabled = true;
+      } else {
+        nextBtn.disabled = false;
+      }
+    }
+
+    // Initial state on page load
+    updateArrowState();
+
+    // Listen for scroll & window resize
+    serviceSlider.addEventListener('scroll', updateArrowState);
+    window.addEventListener('resize', updateArrowState);
+
+    // Button event handlers
+    prevBtn.addEventListener('click', () => {
+      serviceSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      serviceSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
