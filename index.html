@@ -50,13 +50,11 @@
       --transition-speed: 0.3s;
       --nav-height: 60px;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: "Inter", sans-serif;
       background-color: var(--light-bg);
@@ -64,12 +62,10 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
     a {
       text-decoration: none;
       color: inherit;
     }
-
     .container {
       width: 90%;
       max-width: 1200px;
@@ -86,30 +82,24 @@
       background-color: #fff;
       backdrop-filter: blur(10px);
       transition: all var(--transition-speed) ease;
-      height: auto;
       padding: 0.5rem 0;
     }
-
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 1rem;
     }
-
     .brand-logo img {
       width: 100px;
       height: auto;
       display: block;
     }
-
-    /* Hamburger icon (hidden by default, only visible on mobile) */
     .hamburger-menu {
       display: none;
       font-size: 1.5rem;
       cursor: pointer;
     }
-
     .nav-menu {
       display: flex;
       gap: 0.5rem;
@@ -117,7 +107,6 @@
       align-items: center;
       transition: max-height var(--transition-speed) ease;
     }
-
     .nav-menu a {
       color: var(--light-text);
       padding: 0.5rem 0.75rem;
@@ -125,23 +114,38 @@
       border-radius: 6px;
       transition: background-color var(--transition-speed) ease;
     }
-
     .nav-menu a:hover {
       background-color: rgba(0, 0, 0, 0.05);
     }
-
     .nav-cta {
       background-color: var(--accent);
       color: #fff;
     }
-
     .nav-cta:hover {
       background-color: #3ea66a;
     }
-
-    /* When nav-menu has "active" class, show it on mobile */
     .nav-menu.active {
       display: flex;
+    }
+    @media (max-width: 768px) {
+      .hamburger-menu {
+        display: block;
+      }
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+      .brand-logo img {
+        width: 80px;
+      }
     }
 
     /*------------------------------
@@ -161,46 +165,38 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      padding-top: 4rem; /* So hero text isn't hidden by the header */
+      padding-top: 4rem;
     }
-
     .hero-content {
       max-width: 600px;
       color: #fff;
       margin-left: 10%;
     }
-
     .hero-title {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       line-height: 1.2;
     }
-
     .hero-title .highlight {
       color: var(--accent);
     }
-
     .hero-stats {
       display: flex;
       gap: 1.5rem;
       margin-top: 2rem;
     }
-
     .stat-card {
       text-align: center;
     }
-
     .stat-number {
       font-size: 1.75rem;
       font-weight: 700;
       display: block;
     }
-
     .stat-label {
       font-size: 0.95rem;
       opacity: 0.9;
     }
-
     .scroll-indicator {
       position: absolute;
       bottom: 2rem;
@@ -210,7 +206,6 @@
       align-items: center;
       justify-content: center;
     }
-
     .scroll-indicator .mouse {
       width: 24px;
       height: 40px;
@@ -218,7 +213,6 @@
       border-radius: 12px;
       position: relative;
     }
-
     .scroll-indicator .mouse::before {
       content: "";
       position: absolute;
@@ -231,7 +225,6 @@
       border-radius: 2px;
       animation: scroll-wheel 1.2s infinite;
     }
-
     @keyframes scroll-wheel {
       0% {
         opacity: 1;
@@ -251,27 +244,23 @@
       background-color: var(--light-bg);
       color: var(--light-text);
     }
-
     .section-title {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 2rem;
       font-weight: 700;
     }
-
     .slider-controls {
       display: flex;
       align-items: center;
       gap: 1rem;
       justify-content: center;
     }
-
     .service-slider-container {
       position: relative;
       overflow: hidden;
       flex: 1;
     }
-
     .service-slider {
       display: flex;
       gap: 2rem;
@@ -280,11 +269,9 @@
       -webkit-overflow-scrolling: touch;
       overflow-x: auto;
     }
-
     .service-slider::-webkit-scrollbar {
       display: none;
     }
-
     .service-card {
       width: 300px;
       display: inline-flex;
@@ -298,40 +285,23 @@
       padding: 2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       background-color: var(--primary);
+      cursor: pointer;
     }
-
     .service-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
-
     .card-icon {
       font-size: 2rem;
       margin-bottom: 1rem;
       color: var(--accent);
+      text-align: center;
     }
-
     .service-card h3 {
-      margin-bottom: 1rem;
       font-size: 1.25rem;
       color: #fff;
+      text-align: center;
     }
-
-    .service-card p {
-      margin-bottom: 1rem;
-      line-height: 1.4;
-      color: #fff;
-    }
-
-    .card-cta {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .card-cta:hover {
-      text-decoration: underline;
-    }
-
     .slider-btn {
       background: var(--accent);
       color: #fff;
@@ -343,25 +313,22 @@
       opacity: 0.8;
       transition: opacity 0.2s ease;
     }
-
     .slider-btn:hover {
       opacity: 1;
     }
-
     .slider-btn:disabled {
       opacity: 0.4;
       cursor: not-allowed;
     }
 
     /*------------------------------
-      ABOUT SECTION
+      ABOUT US SECTION (Mission, Vision, Safety)
     ------------------------------*/
     .about-section {
       padding: 4rem 1rem;
       background-color: var(--secondary);
       color: #fff;
     }
-
     .about-container {
       display: flex;
       flex-wrap: wrap;
@@ -370,49 +337,76 @@
       margin: 0 auto;
       align-items: center;
     }
-
     .about-media {
       flex: 1 1 400px;
     }
-
-    .about-content {
-      flex: 1 1 400px;
-    }
-
     .media-card img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       display: block;
     }
-
     .parallax-image {
       will-change: transform;
       transition: transform 0.4s ease-out;
     }
-
     .parallax-image:hover {
       transform: scale(1.02);
     }
-
+    .about-content {
+      flex: 1 1 400px;
+    }
     .about-content .section-title {
       text-align: left;
       margin-bottom: 1rem;
       font-size: 1.8rem;
     }
-
-    .lead-text {
+    .mvs-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
       margin-bottom: 1.5rem;
-      font-size: 1.1rem;
     }
-
-    .certification-badges img {
-      width: 80px;
-      margin-right: 1rem;
+    .mvs-icon {
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-top: 0.25rem;
+    }
+    .mvs-item h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .mvs-item p {
+      line-height: 1.4;
+      font-size: 1rem;
     }
 
     /*------------------------------
-      GLOBAL NETWORK SECTION
+      WHO WE ARE SECTION (Additional About Us Text)
+    ------------------------------*/
+    .who-we-are-section {
+      padding: 4rem 1rem;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+    .who-we-are-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .who-we-are-container h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .who-we-are-container p {
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /*------------------------------
+      GLOBAL OPERATIONS SECTION
     ------------------------------*/
     .network-section {
       padding: 4rem 1rem;
@@ -420,7 +414,6 @@
       color: var(--light-text);
       text-align: center;
     }
-
     .network-map {
       position: relative;
       width: 80%;
@@ -430,7 +423,6 @@
       background: url("assets/img/world-map.jpg") no-repeat center/cover;
       border-radius: 8px;
     }
-
     .map-point {
       position: absolute;
       transform: translate(-50%, -50%);
@@ -438,7 +430,6 @@
       cursor: pointer;
       font-size: 0.9rem;
     }
-
     .pulse-effect {
       width: 10px;
       height: 10px;
@@ -449,7 +440,6 @@
       left: -5px;
       animation: pulse 1.5s infinite;
     }
-
     @keyframes pulse {
       0% {
         transform: scale(0.8);
@@ -460,14 +450,12 @@
         opacity: 0;
       }
     }
-
     .location-stats {
       display: flex;
       justify-content: center;
       gap: 2rem;
       margin-top: 2rem;
     }
-
     .stat-item span {
       font-size: 2rem;
       display: block;
@@ -483,7 +471,6 @@
       background-color: var(--secondary);
       color: #fff;
     }
-
     .contact-container {
       display: flex;
       flex-wrap: wrap;
@@ -492,35 +479,29 @@
       margin: 0 auto;
       align-items: flex-start;
     }
-
     .contact-info {
       flex: 1 1 300px;
     }
-
     .contact-info h2 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
     }
-
     .info-card {
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
     }
-
     .info-card i {
       font-size: 1.5rem;
       margin-right: 1rem;
       color: var(--accent);
     }
-
     .contact-form {
       flex: 1 1 400px;
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-
     .form-group input,
     .form-group textarea {
       width: 100%;
@@ -529,7 +510,6 @@
       border: none;
       outline: none;
     }
-
     .form-cta {
       background-color: var(--accent);
       color: #fff;
@@ -543,7 +523,6 @@
       gap: 0.5rem;
       transition: background-color var(--transition-speed) ease;
     }
-
     .form-cta:hover {
       background-color: #3ea66a;
     }
@@ -556,7 +535,6 @@
       color: #fff;
       padding: 2rem 1rem;
     }
-
     .footer-grid {
       display: flex;
       flex-wrap: wrap;
@@ -564,21 +542,17 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .footer-section h4 {
       margin-bottom: 0.5rem;
     }
-
     .social-links a {
       margin-right: 0.5rem;
       color: #fff;
       font-size: 1.2rem;
     }
-
     .social-links a:hover {
       color: var(--accent);
     }
-
     .copyright-bar {
       display: flex;
       justify-content: space-between;
@@ -587,89 +561,86 @@
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       padding-top: 1rem;
     }
-
     .legal-links a {
       margin-left: 1rem;
       color: #fff;
       font-size: 0.9rem;
     }
-
     .legal-links a:hover {
       text-decoration: underline;
+    }
+
+    /*------------------------------
+      MODAL STYLES
+    ------------------------------*/
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .modal.show {
+      display: flex;
+      opacity: 1;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+    }
+    .modal-content h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .modal-content p {
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #888;
+    }
+    .close-btn:hover {
+      color: #333;
     }
 
     /*------------------------------
       RESPONSIVE ADJUSTMENTS
     ------------------------------*/
     @media (max-width: 768px) {
-      /* Stack the logo + hamburger + nav */
-      .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .brand-logo img {
-        width: 80px;
-      }
-
-      .hamburger-menu {
-        display: block; /* show the hamburger on mobile */
-        margin-left: auto;
-        margin-top: 0.5rem;
-      }
-
-      /* Hide nav-menu by default on mobile, show only when .active is toggled */
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-
       .hero-content {
-        margin-left: 5%;
+        margin-left: 0;
+        text-align: center;
       }
-
-      .hero-title {
-        font-size: 2rem;
-      }
-
-      .hero-stats {
+      .about-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
       }
-
-      .about-container,
-      .contact-container {
+      .mvs-item {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
-
-      .network-map {
-        width: 90%;
-      }
-
-      .location-stats {
-        flex-direction: column;
-      }
-
-      .footer-grid {
-        flex-direction: column;
-      }
-
-      .service-card {
-        width: 250px;
-      }
-    }
-
-    @media (min-width: 769px) {
-      /* On desktop, hide the hamburger and show nav-menu by default */
-      .hamburger-menu {
-        display: none;
-      }
-      .nav-menu {
-        display: flex !important;
+      .who-we-are-container h2,
+      .who-we-are-container p {
+        text-align: center;
       }
     }
   </style>
@@ -679,24 +650,22 @@
   <!-- Dynamic Header -->
   <header class="smart-header">
     <nav class="nav-container container">
-      <!-- Logo links to homepage -->
       <a href="#home" class="brand-logo">
         <img src="assets/img/logo1.png" alt="TrustMed Services" width="220" height="60" />
       </a>
       <a href="#home" class="brand-logo">
         <img src="assets/img/logo2.png" alt="TrustMed Services" width="220" height="60" />
       </a>
-
-      <!-- Hamburger Menu (mobile only) -->
       <div class="hamburger-menu" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
       </div>
-
-      <!-- Navigation Links -->
       <div class="nav-menu">
         <a href="#home" class="nav-link home-link">Home</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#about" class="nav-link">About</a>
+        <!-- "About Us" now includes Mission, Vision, Safety -->
+        <a href="#about" class="nav-link">About Us</a>
+        <!-- "Who We Are" is the additional section -->
+        <a href="#who-we-are" class="nav-link">Who We Are</a>
         <a href="#operations" class="nav-link">Global Operations</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </div>
@@ -710,11 +679,10 @@
         <span class="highlight">Navigating Excellence</span> in<br />
         Modern Marine Solutions
       </h1>
-
       <div class="hero-stats">
         <div class="stat-card">
-          <span class="stat-number">850+</span>
-          <span class="stat-label">Vessels Managed</span>
+          <span class="stat-number">200+</span>
+          <span class="stat-label">Clients Served</span>
         </div>
         <div class="stat-card">
           <span class="stat-number">98.7%</span>
@@ -726,7 +694,6 @@
         </div>
       </div>
     </div>
-
     <div class="scroll-indicator">
       <div class="mouse"></div>
     </div>
@@ -735,99 +702,43 @@
   <!-- Services Slider -->
   <section id="services" class="services-section">
     <h2 class="section-title">Core Services</h2>
-
-    <!-- Slider Controls + Container -->
     <div class="container">
       <div class="slider-controls">
-        <!-- Left Arrow -->
         <button class="slider-btn prev-btn" aria-label="Previous">
           <i class="fas fa-chevron-left"></i>
         </button>
-
-        <!-- Slider Container -->
         <div class="service-slider-container">
           <div class="service-slider">
-            <!-- Card 1 -->
-            <article class="service-card">
+            <!-- Service Card 1: Technical Shipmanagement -->
+            <article class="service-card modal-trigger" data-modal="technicalShipmanagementModal">
               <div class="card-icon">
                 <i class="fas fa-ship"></i>
               </div>
               <h3>Technical Shipmanagement</h3>
-              <p>
-                Full operational control with real-time monitoring systems and
-                predictive maintenance solutions.
-              </p>
-              <a href="#" class="card-cta">Explore Solutions →</a>
             </article>
-
-            <!-- Card 2 -->
-            <article class="service-card">
+            <!-- Service Card 2: Marine Consultancy -->
+            <article class="service-card modal-trigger" data-modal="marineConsultancyModal">
               <div class="card-icon">
-                <i class="fas fa-hard-hat"></i>
+                <i class="fas fa-clipboard-list"></i>
               </div>
-              <h3>Drydock Management</h3>
-              <p>
-                End-to-end drydock supervision with cost optimization and
-                timeline guarantees.
-              </p>
-              <a href="#" class="card-cta">View Case Studies →</a>
+              <h3>Marine Consultancy</h3>
             </article>
-
-            <!-- Card 3 -->
-            <article class="service-card">
+            <!-- Service Card 3: All-Inclusive Shipping -->
+            <article class="service-card modal-trigger" data-modal="logisticsOperationsModal">
               <div class="card-icon">
-                <i class="fas fa-anchor"></i>
+                <i class="fas fa-shipping-fast"></i>
               </div>
-              <h3>Crew Management</h3>
-              <p>
-                Providing skilled personnel with thorough training and safety
-                compliance.
-              </p>
-              <a href="#" class="card-cta">Learn More →</a>
+              <h3>All-Inclusive Shipping</h3>
             </article>
-
-            <!-- Card 4 -->
-            <article class="service-card">
+            <!-- Service Card 4: Ship Services/Repairs -->
+            <article class="service-card modal-trigger" data-modal="shipServicesRepairsModal">
               <div class="card-icon">
-                <i class="fas fa-shield-alt"></i>
+                <i class="fas fa-tools"></i>
               </div>
-              <h3>Regulatory Compliance</h3>
-              <p>
-                Comprehensive audits and documentation to meet global maritime
-                standards.
-              </p>
-              <a href="#" class="card-cta">View Details →</a>
-            </article>
-
-            <!-- Card 5 -->
-            <article class="service-card">
-              <div class="card-icon">
-                <i class="fas fa-route"></i>
-              </div>
-              <h3>Navigation & Route Planning</h3>
-              <p>
-                State-of-the-art navigation systems for optimal route efficiency
-                and fuel savings.
-              </p>
-              <a href="#" class="card-cta">Explore Services →</a>
-            </article>
-
-            <!-- Card 6 -->
-            <article class="service-card">
-              <div class="card-icon">
-                <i class="fas fa-user-check"></i>
-              </div>
-              <h3>Safety & Training</h3>
-              <p>
-                Customized programs to enhance onboard safety culture and
-                operational readiness.
-              </p>
-              <a href="#" class="card-cta">Get Started →</a>
+              <h3>Ship Services/Repairs</h3>
             </article>
           </div>
         </div>
-
-        <!-- Right Arrow -->
         <button class="slider-btn next-btn" aria-label="Next">
           <i class="fas fa-chevron-right"></i>
         </button>
@@ -835,52 +746,91 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About Us Section (Mission, Vision, Safety) -->
   <section id="about" class="about-section">
     <div class="about-container container">
       <div class="about-media">
         <div class="media-card">
-          <img
-            src="assets/img/operations.jpg"
-            alt="Global Operations"
-            class="parallax-image"
-          />
+          <img src="assets/img/operations.jpg" alt="Global Operations" class="parallax-image" />
         </div>
       </div>
-
       <div class="about-content">
-        <h2 class="section-title">
-          Marine Expertise<br /><span class="highlight">Since 2008</span>
-        </h2>
-        <p class="lead-text">
-          Pioneering smart marine solutions through technological innovation and
-          operational excellence.
-        </p>
-
-        <div class="certification-badges">
-          <img src="assets/img/iso-cert.png" alt="ISO 9001 Certified" />
-          <img src="assets/img/maritime-cert.png" alt="IMCA Certified" />
+        <h2 class="section-title">About Us</h2>
+        <!-- Three Points with Icons -->
+        <div class="mvs-item">
+          <div class="mvs-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div>
+            <h3>Our Mission</h3>
+            <p>
+              We aim to transform the maritime industry by offering safe, sustainable, 
+              and efficient ship management solutions that focus on the welfare of our crew, 
+              environmental stewardship, and the communities we support.
+            </p>
+          </div>
+        </div>
+        <div class="mvs-item">
+          <div class="mvs-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div>
+            <h3>Our Vision</h3>
+            <p>
+              Our vision is to be the premier Shipping Company recognized for delivering 
+              outstanding services and solutions that facilitate global shipping trade. 
+              We are dedicated to fostering long-term partnerships with our clients, 
+              providing innovative and dependable solutions, and serving as a trusted ally 
+              in the international maritime sector.
+            </p>
+          </div>
+        </div>
+        <div class="mvs-item">
+          <div class="mvs-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div>
+            <h3>Safety</h3>
+            <p>
+              The safety of our team, our clients' properties, and the environment 
+              is our top priority. We uphold the highest safety standards by implementing 
+              strict protocols to ensure the protection and well-being of all stakeholders involved.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Global Network Section -->
+  <!-- Who We Are Section (Additional About Us Text) -->
+  <section id="who-we-are" class="who-we-are-section">
+    <div class="who-we-are-container container">
+      <h2>Who We Are</h2>
+      <p>
+        We specialize in delivering holistic solutions for ship owners globally. Our mission 
+        is to guarantee that every vessel we manage operates safely, efficiently, and profitably. 
+        With a dedicated team of seasoned professionals and a firm commitment to quality, we 
+        provide an extensive array of services, including Marine Consultancy, Technical ShipManagement, 
+        Ship Repairs, and Logistics. Our offerings are tailored to address the unique needs of each 
+        client, and we consistently strive to exceed expectations to ensure complete satisfaction.
+      </p>
+    </div>
+  </section>
+
+  <!-- Global Operations Section -->
   <section id="operations" class="network-section">
     <h2 class="section-title">Worldwide Presence</h2>
-
     <div class="network-map">
-      <div class="map-point" style="top: 35%; left: 48%">
+      <!-- UAE Office (adjust positioning as needed) -->
+      <div class="map-point" style="top: 40%; left: 70%">
         <div class="pulse-effect"></div>
-        <span>Rotterdam HQ</span>
+        <span>UAE Office</span>
       </div>
-      <!-- Add more map points as needed -->
     </div>
-
     <div class="location-stats">
       <div class="stat-item">
-        <span>15</span>
-        <p>Global Offices</p>
+        <span>30+</span>
+        <p>Global Partners</p>
       </div>
       <div class="stat-item">
         <span>200+</span>
@@ -895,15 +845,14 @@
       <div class="contact-info">
         <h2>Ready to Modernize<br />Your Fleet?</h2>
         <div class="info-card">
-          <i class="fas fa-phone"></i>
+          <i class="fas fa-map-marker-alt"></i>
           <div>
-            <h4>Emergency Support</h4>
-            <p>+31 123 456 789</p>
+            <h4>Contact Details</h4>
+            <p>A4-1219B - Building<br/>Al Hamra Industrial Free Zone RAK, United Arab Emirate</p>
+            <p>Email: <a href="mailto:info@trustmed-ms.com" style="color: #fff;">info@trustmed-ms.com</a></p>
           </div>
         </div>
-        <!-- Add more info cards if needed -->
       </div>
-
       <form class="contact-form">
         <div class="form-group">
           <input type="text" placeholder="Full Name" required />
@@ -934,9 +883,7 @@
           <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-      <!-- Add additional footer columns/sections here if needed -->
     </div>
-
     <div class="copyright-bar container">
       <p>© 2025 TrustMed Services Ltd. All rights reserved</p>
       <div class="legal-links">
@@ -946,6 +893,61 @@
     </div>
   </footer>
 
+  <!-- MODALS for Services -->
+  <!-- 1) Technical Shipmanagement -->
+  <div class="modal" id="technicalShipmanagementModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="technicalShipmanagementModal">&times;</span>
+      <h3>Technical Shipmanagement</h3>
+      <p>
+        Offers comprehensive ship management solutions to clients around the globe. 
+        With experienced professionals both on shore and at sea, we are dedicated 
+        to providing an exceptional ship management experience—ensuring smooth, 
+        safe operations in compliance with all applicable regulations.
+      </p>
+    </div>
+  </div>
+  <!-- 2) Marine Consultancy -->
+  <div class="modal" id="marineConsultancyModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="marineConsultancyModal">&times;</span>
+      <h3>Marine Consultancy</h3>
+      <p>
+        Specializes in marine consulting services, delivering tailored solutions 
+        to tackle a wide range of challenges associated with the ocean, ports, 
+        and vessels. Our team of expert maritime engineers and skilled seafarers 
+        offers personalized strategies to navigate the complexities of maritime 
+        logistics, ship docking, and port infrastructure management.
+      </p>
+    </div>
+  </div>
+  <!-- 3) All-Inclusive Shipping -->
+  <div class="modal" id="logisticsOperationsModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="logisticsOperationsModal">&times;</span>
+      <h3>All-Inclusive Shipping</h3>
+      <p>
+        Our extensive range of services in the shipping sector establishes us as 
+        a single-source provider for complete shipping solutions. From logistics 
+        management to specialized transport services, our offerings streamline 
+        operations and meet the diverse needs of our clients.
+      </p>
+    </div>
+  </div>
+  <!-- 4) Ship Services/Repairs -->
+  <div class="modal" id="shipServicesRepairsModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="shipServicesRepairsModal">&times;</span>
+      <h3>Ship Services/Repairs</h3>
+      <p>
+        Our proficient technicians and engineers are well-versed in the latest 
+        industry standards, ensuring your vessel remains in prime condition. 
+        Through global partnerships, we deliver 24/7 support upon your vessel’s 
+        arrival.
+      </p>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script>
     // Toggle nav-menu on mobile
@@ -953,47 +955,55 @@
       const navMenu = document.querySelector(".nav-menu");
       navMenu.classList.toggle("active");
     }
-
     // Service Slider Navigation
     const serviceSlider = document.querySelector(".service-slider");
     const prevBtn = document.querySelector(".prev-btn");
     const nextBtn = document.querySelector(".next-btn");
-
-    // Scroll distance (in px) per click
     const scrollAmount = 300;
-
-    // Disable/enable arrows based on scroll position
     function updateArrowState() {
       const scrollLeft = serviceSlider.scrollLeft;
       const maxScrollLeft = serviceSlider.scrollWidth - serviceSlider.clientWidth;
-
-      if (scrollLeft <= 0) {
-        prevBtn.disabled = true;
-      } else {
-        prevBtn.disabled = false;
-      }
-
-      if (scrollLeft >= maxScrollLeft - 1) {
-        nextBtn.disabled = true;
-      } else {
-        nextBtn.disabled = false;
-      }
+      prevBtn.disabled = scrollLeft <= 0;
+      nextBtn.disabled = scrollLeft >= maxScrollLeft - 1;
     }
-
-    // Initial state on page load
     updateArrowState();
-
-    // Listen for scroll & window resize
     serviceSlider.addEventListener("scroll", updateArrowState);
     window.addEventListener("resize", updateArrowState);
-
-    // Button event handlers
     prevBtn.addEventListener("click", () => {
       serviceSlider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     });
-
     nextBtn.addEventListener("click", () => {
       serviceSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+    // Modal functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const modalTriggers = document.querySelectorAll('.modal-trigger');
+      const closeButtons = document.querySelectorAll('.close-btn');
+      const modals = document.querySelectorAll('.modal');
+      // Open modal
+      modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          const modalId = this.getAttribute('data-modal');
+          const modal = document.getElementById(modalId);
+          if (modal) modal.classList.add('show');
+        });
+      });
+      // Close modal when clicking close button
+      closeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const modalId = this.getAttribute('data-close');
+          const modal = document.getElementById(modalId);
+          if (modal) modal.classList.remove('show');
+        });
+      });
+      // Optional: Close modal when clicking outside content
+      modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.classList.remove('show');
+          }
+        });
+      });
     });
   </script>
 </body>
