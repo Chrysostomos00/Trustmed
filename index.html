@@ -237,7 +237,7 @@
     }
 
     /*------------------------------
-      SERVICES SECTION
+      SERVICES SECTION (Full-Width Grid)
     ------------------------------*/
     .services-section {
       padding: 4rem 1rem;
@@ -250,34 +250,13 @@
       margin-bottom: 2rem;
       font-weight: 700;
     }
-    .slider-controls {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .service-slider-container {
-      position: relative;
-      overflow: hidden;
-      flex: 1;
-    }
-    .service-slider {
-      display: flex;
+    /* New grid layout for services */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      white-space: nowrap;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      overflow-x: auto;
-    }
-    .service-slider::-webkit-scrollbar {
-      display: none;
     }
     .service-card {
-      width: 300px;
-      display: inline-flex;
-      flex-direction: column;
-      flex-shrink: 0;
-      white-space: normal;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
       backdrop-filter: blur(5px);
@@ -301,24 +280,6 @@
       font-size: 1.25rem;
       color: #fff;
       text-align: center;
-    }
-    .slider-btn {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 0.75rem;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.2rem;
-      opacity: 0.8;
-      transition: opacity 0.2s ease;
-    }
-    .slider-btn:hover {
-      opacity: 1;
-    }
-    .slider-btn:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
     }
 
     /*------------------------------
@@ -699,49 +660,39 @@
     </div>
   </section>
 
-  <!-- Services Slider -->
+  <!-- Services Section (Full-Width Grid Layout) -->
   <section id="services" class="services-section">
     <h2 class="section-title">Core Services</h2>
     <div class="container">
-      <div class="slider-controls">
-        <button class="slider-btn prev-btn" aria-label="Previous">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="service-slider-container">
-          <div class="service-slider">
-            <!-- Service Card 1: Technical Shipmanagement -->
-            <article class="service-card modal-trigger" data-modal="technicalShipmanagementModal">
-              <div class="card-icon">
-                <i class="fas fa-ship"></i>
-              </div>
-              <h3>Technical Shipmanagement</h3>
-            </article>
-            <!-- Service Card 2: Marine Consultancy -->
-            <article class="service-card modal-trigger" data-modal="marineConsultancyModal">
-              <div class="card-icon">
-                <i class="fas fa-clipboard-list"></i>
-              </div>
-              <h3>Marine Consultancy</h3>
-            </article>
-            <!-- Service Card 3: All-Inclusive Shipping -->
-            <article class="service-card modal-trigger" data-modal="logisticsOperationsModal">
-              <div class="card-icon">
-                <i class="fas fa-shipping-fast"></i>
-              </div>
-              <h3>All-Inclusive Shipping</h3>
-            </article>
-            <!-- Service Card 4: Ship Services/Repairs -->
-            <article class="service-card modal-trigger" data-modal="shipServicesRepairsModal">
-              <div class="card-icon">
-                <i class="fas fa-tools"></i>
-              </div>
-              <h3>Ship Services/Repairs</h3>
-            </article>
+      <div class="service-grid">
+        <!-- Service Card 1: Technical Shipmanagement -->
+        <article class="service-card modal-trigger" data-modal="technicalShipmanagementModal">
+          <div class="card-icon">
+            <i class="fas fa-ship"></i>
           </div>
-        </div>
-        <button class="slider-btn next-btn" aria-label="Next">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+          <h3>Technical Shipmanagement</h3>
+        </article>
+        <!-- Service Card 2: Marine Consultancy -->
+        <article class="service-card modal-trigger" data-modal="marineConsultancyModal">
+          <div class="card-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <h3>Marine Consultancy</h3>
+        </article>
+        <!-- Service Card 3: All-Inclusive Shipping -->
+        <article class="service-card modal-trigger" data-modal="logisticsOperationsModal">
+          <div class="card-icon">
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <h3>All-Inclusive Shipping</h3>
+        </article>
+        <!-- Service Card 4: Ship Services/Repairs -->
+        <article class="service-card modal-trigger" data-modal="shipServicesRepairsModal">
+          <div class="card-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Ship Services/Repairs</h3>
+        </article>
       </div>
     </div>
   </section>
@@ -843,23 +794,22 @@
   <section id="contact" class="contact-section">
     <div class="contact-container container">
       <div class="contact-info">
-  <h2>Ready to Modernize<br />Your Fleet?</h2>
-  <div class="info-card">
-    <i class="fas fa-map-marker-alt"></i>
-    <div>
-      <h4>Address</h4>
-      <p>A4-1219B - Building<br/>Al Hamra Industrial Free Zone, RAK,<br/>United Arab Emirates</p>
-    </div>
-  </div>
-  <div class="info-card">
-    <i class="fas fa-envelope"></i>
-    <div>
-      <h4>Email</h4>
-      <p><a href="mailto:info@trustmed-ms.com" style="color: #fff;">info@trustmed-ms.com</a></p>
-    </div>
-  </div>
-</div>
-
+        <h2>Ready to Modernize<br />Your Fleet?</h2>
+        <div class="info-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Address</h4>
+            <p>A4-1219B - Building<br/>Al Hamra Industrial Free Zone, RAK,<br/>United Arab Emirates</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@trustmed-ms.com" style="color: #fff;">info@trustmed-ms.com</a></p>
+          </div>
+        </div>
+      </div>
       <form class="contact-form">
         <div class="form-group">
           <input type="text" placeholder="Full Name" required />
@@ -962,26 +912,6 @@
       const navMenu = document.querySelector(".nav-menu");
       navMenu.classList.toggle("active");
     }
-    // Service Slider Navigation
-    const serviceSlider = document.querySelector(".service-slider");
-    const prevBtn = document.querySelector(".prev-btn");
-    const nextBtn = document.querySelector(".next-btn");
-    const scrollAmount = 300;
-    function updateArrowState() {
-      const scrollLeft = serviceSlider.scrollLeft;
-      const maxScrollLeft = serviceSlider.scrollWidth - serviceSlider.clientWidth;
-      prevBtn.disabled = scrollLeft <= 0;
-      nextBtn.disabled = scrollLeft >= maxScrollLeft - 1;
-    }
-    updateArrowState();
-    serviceSlider.addEventListener("scroll", updateArrowState);
-    window.addEventListener("resize", updateArrowState);
-    prevBtn.addEventListener("click", () => {
-      serviceSlider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    });
-    nextBtn.addEventListener("click", () => {
-      serviceSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    });
     // Modal functionality
     document.addEventListener('DOMContentLoaded', () => {
       const modalTriggers = document.querySelectorAll('.modal-trigger');
